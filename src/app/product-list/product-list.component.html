@@ -1,19 +1,25 @@
 <h2>Products</h2>
 <!--This div displays the products from the products.ts file-->
-<div *ngFor="let product of products">
-  <h3>
-    <a [title]="product.name + ' details'">
+<div id="prime_div" *ngFor="let product of products">
+  <app-product-alerts id="notify_button" [product]="product" (notify)="onNotify()">
+  </app-product-alerts>
+  <h3 id="prod_name">
+    <a
+        [title]="product.name + ' details'"
+        [routerLink]="['/products', product.id]"> <!--This allows for a link to another page / site-->
       <!--this notation is used to yoink stuff from the products.ts file-->
       {{ product.name }}
     </a>
   </h3>
   <!--checks if there is a product description within the products.ts file if there is its displayes it within a paragraph-->
-  <p *ngIf="product.description">Description: {{ product.description }}</p>
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
   <!--creates a button useing a function within the product-list.component.ts -->
-  <button type="button" (click)="share()">Share!</button>
+  <button id="share button" type="button" (click)="share()">
+    Share!
+  </button>
   <!--yoinks data from a child and displays it. all this is from another HTML file-->
-  <app-product-alerts [product]="product" (notify)="onNotify()">
-  </app-product-alerts>
 </div>
 
 <!-- 

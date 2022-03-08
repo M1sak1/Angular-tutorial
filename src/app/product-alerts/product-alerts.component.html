@@ -1,3 +1,4 @@
-<p *ngIf="product && product.price > 700">
-  <button type="button" (click)="notify.emit()">Notify Me</button>
+<!--adds a button if the product is not available-->
+<p *ngIf="product && !product.available">
+  <button id="notify_button" type="button" (click)="notify.emit()">Notify Me</button>
 </p>

@@ -1,4 +1,11 @@
+#notify_button{
+    display: inline;
+    float: right;
+}
 
+#prime_div{
+    display: block;
+}
 
 /*
 Copyright Google LLC. All Rights Reserved.
